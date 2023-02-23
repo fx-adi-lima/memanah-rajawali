@@ -2,6 +2,8 @@
 
 Untuk membangun aplikasi secara manual kita perlu langkah awal berikut.
 
+File berikut kita pakai sebagai `src/net/adi/personal/Main.java`.
+
 ```java
 
 package net.adi.personal;
