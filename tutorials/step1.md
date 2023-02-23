@@ -65,3 +65,9 @@ Berikutnya:
 </manifest>
 
 ```
+Karena kita mencantumkan `android:icon`, maka kita juga perlu membuat sebuah folder bernama
+`res/drawable`, yang hanya berisi sebuah file, yaitu `ic_launcher.png`.
+Icon tersebut akan ditampilkan untuk mewakili kehadiran aplikasi kita nantinya.
+Tidak penting bagaimana penampilan icon tersebut, tetapi namanya harus `ic_launcher.png`.
+
+
