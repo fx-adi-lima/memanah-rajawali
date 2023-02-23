@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personal</title>
+        <link rel="stylesheet" href="styles/w3.css">
+        <link rel="stylesheet" href="styles/xcode.min.css">
+    </head>
+    <body>
+        <div class="w3-bar w3-white w3-card w3-top">
+            <a class="w3-bar-item w3-btn w3-white w3-hover-blue" href="editor.html">Editor</a>
+            <button class="w3-bar-item w3-btn w3-white w3-hover-blue" type="button" onclick='doMsg()'>Show Toast</button>
+            <button class="w3-bar-item w3-btn w3-white w3-hover-blue" type="button" onclick="doMarkdown()">Do Markdown</button>
+        </div>
+        <div class="w3-container w3-padding-32" id="preview">
+	    <p>This will be the preview</p>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script src="modules/highlight.min.js"></script>
+        <script src="modules/home.js"></script>
+    </body>
+</html>
+
