@@ -1,4 +1,4 @@
-package hu.pe.xaverius2017.tutorials.step1;
+package net.adi.personal;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -6,7 +6,6 @@ import android.content.Context;
 import android.widget.TextView;
 
 public class Main extends Activity {
-
 	@Override
 	public void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
