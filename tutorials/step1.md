@@ -65,9 +65,29 @@ Berikutnya:
 </manifest>
 
 ```
+
 Karena kita mencantumkan `android:icon`, maka kita juga perlu membuat sebuah folder bernama
 `res/drawable`, yang hanya berisi sebuah file, yaitu `ic_launcher.png`.
 Icon tersebut akan ditampilkan untuk mewakili kehadiran aplikasi kita nantinya.
 Tidak penting bagaimana penampilan icon tersebut, tetapi namanya harus `ic_launcher.png`.
 
+Berikutnya, kita menulis sebuah skrip untuk memudahkan _recompile_, kapan saja kita mau,
+tanpa harus menulis perintah yang sama lagi.
+
+Dalam hal ini gunakan `build.sh` yang saya sertakan dalam repository ini sebagai contoh.
+Sesuaikan seperlunya.
+
+Dari dalam `Terminal`, ketik perintah untuk menjalankan skrip itu:
+
+```bash
+
+sh -e build.sh
+
+```
+
+Kalau tidak ada error, maka hasilnya adalah `Personal.apk` di dalam folder `Download` Anda.
+Klik icon tersebut untuk menginstall app (Anda harus menghidupkan `Install apps from unknown sources` dari **Settings** Android).
+
+Untuk tahap ini, hasilnya sungguh tidak banyak, hanya muncul sebuah app yang menampilkan sepotong teks `Hello, World!` yang 
+sudah cukup akrab bagi kita. Aplikasi itu punya _background_ hitam, dengan teks putih.
 
