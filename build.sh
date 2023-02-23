@@ -11,23 +11,6 @@ aapt package -v -f \
              -S res \
              -m
 
-
-# compile the java sources
-# THIS EXAMPLE USING ecj, and we should find out which version
-# If using jack then we must do like this:
-#   jack --classpath $ANDROID_HOME/platforms/android-n/android.jar \
-#        --import [path/to/import/lib/*.jar \
-#        --output-dex bin/ \
-#        src/ gen/
-# And then, no more using dx to produce classes.dex
-
-#####################################################################
-#
-#ecj -d ./obj -classpath $HOME/../usr/share/java/android.jar \
-#	     -sourcepath ./src $(find src -type f -name "*.java")
-#
-#dx --dex --verbose --output=./bin/classes.dex ./obj
-
 SOURCES=$(find src -name *.java)
 
 javac -d obj/ \
@@ -65,6 +48,4 @@ jarsigner -sigalg SHA1withRSA \
     Personal.apk personal
 
 mv -fv Personal.apk /sdcard/Download/
-echo "Our Personal.apk is ready to go"
-echo
 
