@@ -33,3 +33,35 @@ public class Main extends Activity {
 
 ```
 
+Berikutnya:
+
+```xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="net.adi.personal"
+      android:versionCode="1"
+      android:versionName="1.0">
+
+    <uses-permission android:name="android.permisson.WRITE_INTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permisson.READ_INTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    
+    <supports-screens android:resizeable="true"
+                      android:xlargeScreens="true"/>
+
+    <application android:icon="@+drawable/ic_launcher"
+		 android:label="Personal">
+        <activity android:name="net.adi.personal.Main"
+                  android:label="Personal Main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
+
+```
