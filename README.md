@@ -1,4 +1,11 @@
-# memanah-rajawali
+# React With Parcel
 
-Android-x86 version of the book, but using ReactJS.
+First, add React and React-DOM.
+
+```bash
+
+npm install --save-dev react react-dom
+
+```
+
 
