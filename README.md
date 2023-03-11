@@ -1,11 +1,4 @@
-# React With Parcel
+# Move To Codespace With Deno
 
-First, add React and React-DOM.
-
-```bash
-
-npm install --save-dev react react-dom
-
-```
-
+Please use `deno-server` directory, I will move Android stuffs somewhere else.
 
