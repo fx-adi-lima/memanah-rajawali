@@ -1,0 +1,106 @@
+# <i class="fa fa-home"></i> Belajar Typescript
+
+Pekerjaan ini[^pekerjaan-ini] agak terhambat karena saya berusaha memakai format MDX, dan menemui
+beberapa kendala. Akhirnya saya memutuskan untuk kembali berkonsentrasi pada proses
+terjemahan/saduran untuk segera menyelesaikan keseluruhan _buku_ ini.
+
+<div class="w3-panel w3-round-large w3-leftbar w3-border-orange w3-card-4">
+### Tips
+
+Bagian ini membahas teknis penyusunan _website_, kalau ingin segera [membaca novel](/buku/index.html),
+atau [bermain-main dengan Deno](/deno/index.html), atau [membahas tentang ES Module](/esm/index.html),
+lompati bagian ini.
+
+</div>
+
+Kita akan tetap memakai format **Markdown** biasa yang sudah sangat stabil (dan tidak
+membutuhkan komponen berat seperti **React**). Ini sangat bagus untuk `Android`, karena
+menyingkirkan keperluan untuk sebuah `HTTP Server`, yang meskipun bisa saja kita akali,
+tetapi menimbulkan masalah yang tidak perlu.
+
+Dari sisi _client_ kita tetap bisa memakai cara berikut:
+
+```javascript
+document.getElementById("btnTest").addEventListener("click", () => {
+    document.getElementById("info").innerHTML = `
+    <h3>Button Info</h3>
+    <p>Dan baru akan bisa jalan kalau <em>event</em> kita
+    tempatkan di module lain.</p>`;
+});
+```
+
+Dan akhirnya tombol dari dokumen `MDX` sekalipun, yang dikirim dari sisi server, akan 
+berfungsi seperti yang diharapkan. Keperluan utama kita hanya urusan tombol, karena dengan
+tombol dan _event click_ barulah kita bisa memuat dokumen yang kita maksud.
+
+***
+
+## Syntax Highlighting
+
+Yang satu ini agak _tricky_ kalau memakai ESM, seperti yang kita pakai dalam `Deno`. Kalau
+melalui `Node.js` adalah seperti ini.
+
+```javascript
+const hljs = require('./highlight.js');
+const lang = require('./languages/javascript.min.js');
+
+// Lalu bisa langsung digunakan.
+let strTest = hljs.highlight("var i = 1000;", {language: 'javascript'}).value;
+console.log(strTest);
+```
+
+Kejadiannya sangat berbeda kalau menggunakan `Deno`, meskipun `Highlight.js` menyediakan `ES Module`,
+tetapi rupanya tidak bisa langsung pakai.
+
+<div class="w3-panel w3-round-large w3-leftbar w3-border-blue w3-card-4">
+
+```javascript
+import * as hljs from './highlight.js';
+import lang from './languages/javascript.min.js';
+
+// Semua import di atas kita ambil dari direktori "es"
+let strTest = hljs.highlight("var i = 1234;", {language: 'javascript'}).value;
+console.log(strTest);
+
+// Apa yang terjadi?
+```
+
+</div>
+
+Berikut adalah dokumentasi ES6 dari `Highlight.js` sendiri.
+
+<div class="w3-panel w3-card-4 w3-border-green w3-leftbar w3-round-large">
+
+### ES6 Modules / `import`
+
+*Note: You can also import directly from fully static URLs, such as our very own pre-built
+ES6 Module CDN resources. See [Fetch via CDN](#fetch-via-cdn) for specific examples.*
+
+The default import will register all languages:
+
+```js
+import hljs from 'highlight.js';
+```
+
+It is more efficient to import only the library and register the languages you need:
+
+```js
+import hljs from 'highlight.js/lib/core';
+import javascript from 'highlight.js/lib/languages/javascript';
+hljs.registerLanguage('javascript', javascript);
+```
+
+If your build tool processes CSS imports, you can also import the theme directly as a module:
+
+```js
+import hljs from 'highlight.js';
+import 'highlight.js/styles/github.css';
+```
+
+</div>
+
+Ini berarti kita harus melakukan _load_ secara manual untuk setiap bahasa yang ingin kita pergunakan.
+
+
+[^pekerjaan-ini]: Pekerjaan menyadur dan menulis ulang novel **Memanah Burung Rajawali**, karya Louis Cha.
+
